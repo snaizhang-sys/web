@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<strong strc="../js/bootstrap.bundle.min.js"></strong>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+
+</head>
+<body>
+
+<form action="/action_page.php" id="form1">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname" form="form1">
+
+
+	<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<button type="submit" class="btn btn-primary position-relative" id="submitBtn">
+    <span class="btn-text">Sign in</span>
+    <span class="spinner-border spinner-border-sm d-none ms-2" role="status" aria-hidden="true" id="loadingSpinner"></span>
+    <span class="visually-hidden">Loading...</span>
+  </button>
+</div>
+
+
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+  <label class="form-check-label" for="checkDefault">
+    Default checkbox
+  </label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+  <label class="form-check-label" for="switchCheckDefault">Default switch checkbox input</label>
+</div>
+<input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+<label class="btn btn-primary" for="btn-check">Single toggle</label>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+  <span class="input-group-text">@</span>
+  <input type="text" class="form-control" placeholder="Server" aria-label="Server">
+</div>
+<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+  <label for="floatingInput">Email address</label>
+
+  <div class="row">
+  <div class="col">
+    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+  </div>
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+  </div>
+</div>
+
+<form class="row g-3 needs-validation" novalidate>
+
+<form class="row g-3">
+  <div class="col-md-4">
+    <label for="validationDefault01" class="form-label">First name</label>
+    <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
+  </div>
+  <div class="col-md-4">
+    <label for="validationDefault02" class="form-label">Last name</label>
+    <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
+  </div>
+  <div class="col-md-4">
+    <label for="validationDefaultUsername" class="form-label">pyhone</label>
+    <div class="input-group">
+
+      <span class="input-group-text" id="inputGroupPrepend2"><i class="fi fi-rr-phone-call"></i></span>
+      <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationDefault03" class="form-label">City</label>
+    <input type="text" class="form-control" id="validationDefault03" required>
+  </div>
+  <div class="col-md-3">
+    <label for="validationDefault04" class="form-label">State</label>
+    <select class="form-select" id="validationDefault04" required>
+      <option selected disabled value="">Choose...</option>
+      <option>...</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <label for="validationDefault05" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="validationDefault05" required>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+      <label class="form-check-label" for="invalidCheck2">
+        Agree to terms and conditions
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Submit form</button>
+  </div>
+</form>
+
+<script>
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+</script>
+
+<div class="password-container">
+  <input type="password" id="passwordInput" placeholder="輸入密碼">
+  <i class="fa-solid fa-eye" id="togglePassword"></i>
+</div>
+
+
+<!-- <div class="input-group mt-3">
+  <span class="input-group-text">輸入密碼</span>
+  
+  <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" >
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fi fi-ss-eye"></i></button>
+</div> -->
+
+<div class="input-group mt-3">
+  <span class="input-group-text">輸入密碼</span>
+  <!-- 將 type 從 text 改為 password，並加上 id 以便抓取 -->
+  <!-- <input type="password" class="form-control" id="passwordInput" aria-label="輸入密碼"> -->
+  <button class="btn btn-outline-secondary" type="button" id="toggleButton">
+    <i class="fi fi-ss-eye" id="toggleIcon"></i>
+  </button>
+</div>
+
+<script>
+  // 1. 密碼顯示/隱藏切換
+  const passwordInput = document.getElementById('passwordInput');
+  const toggleIcon = document.getElementById('toggleIcon');
+
+  document.getElementById('toggleButton').addEventListener('click', function () {
+    const isPassword = passwordInput.type === 'password';
+    passwordInput.type = isPassword ? 'text' : 'password';
+    
+    toggleIcon.classList.toggle('fi-ss-eye');
+    toggleIcon.classList.toggle('fi-ss-eye-crossed');
+  });
+
+  // 2. 按鈕 Loading 狀態
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const loadingSpinner = document.getElementById('loadingSpinner');
+
+  submitBtn.addEventListener('click', function (e) {
+    e.preventDefault(); // 防止表單送出導致頁面重整
+    this.disabled = true;
+    
+    btnText.textContent = 'Loading...';
+    loadingSpinner.classList.remove('d-none');
+    
+    setTimeout(() => {
+      this.disabled = false;
+      btnText.textContent = 'Sign in';
+      loadingSpinner.classList.add('d-none');
+    }, 2000);
+  });
+</script>
+
+
+</body>
+</html>
