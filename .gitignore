@@ -1,0 +1,114 @@
+# Specify filepatterns you want git to ignore.
+# ==============================================================================
+# Git Ignore Configuration File (.gitignore)
+# 涵蓋跨平台系統暫存檔、IDE、機密金鑰、依賴套件、編譯產物與多語言環境
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 作業系統暫存檔 (Operating System)
+# macOS .DS_Store、Windows Thumbs.db 與 Linux 暫存目錄
+# ------------------------------------------------------------------------------
+.DS_Store                    # macOS 檔案夾自訂視圖屬性
+.DS_Store?                   # macOS 衍生暫存屬性
+._*                          # macOS 資源分支檔案
+.Spotlight-V100              # macOS Spotlight 搜尋快取
+.Trashes                     # macOS 資源回收筒
+Thumbs.db                    # Windows 縮圖資料庫
+[Dd]esktop.ini               # Windows 資料夾設定
+$RECYCLE.BIN/                # Windows 資源回收筒
+*~                           # Linux / 編輯器備份檔案
+.fuse_hidden*                # Linux FUSE 隱藏檔
+
+# ------------------------------------------------------------------------------
+# 編輯器與 IDE 設定 (IDEs & Editors)
+# VS Code, JetBrains, Sublime Text, Vim 等開發環境專屬檔
+# ------------------------------------------------------------------------------
+.vscode/*                    # VS Code 專案內部設定
+!.vscode/settings.json       # 保留團隊共享的 settings.json
+!.vscode/tasks.json          # 保留 tasks.json
+!.vscode/launch.json         # 保留 launch.json 偵錯配置
+!.vscode/extensions.json     # 保留推薦外掛清單 extensions.json
+.idea/                       # JetBrains (IntelliJ, WebStorm, PyCharm)
+*.iws                        # IntelliJ Workspace
+*.iml                        # IntelliJ 模組檔
+*.sublime-workspace          # Sublime 工作區
+*.swp                        # Vim 交換檔
+*.swo                        # Vim 隱藏交換檔
+
+# ------------------------------------------------------------------------------
+# 環境變數與安全金鑰 (Secrets & Credentials)
+# 嚴防敏感 Token、密鑰與金鑰外流至公用儲存庫
+# ------------------------------------------------------------------------------
+.env                         # 本機環境變數檔 (包含私密金鑰)
+.env.local                   # Next.js / Vite 本機覆蓋變數
+.env.*.local                 # 各階段本機環境變數
+.env*                        # 匹配所有 .env 前綴檔案
+!.env.example                # 例外保留環境變數範例檔
+*.pem                        # SSL / 私密憑證證書 (PEM)
+*.key                        # 私鑰檔案 (Key)
+*.cert                       # 憑證檔案 (Cert)
+id_rsa                       # SSH RSA 私鑰
+id_ed25519                   # SSH ED25519 私鑰
+
+# ------------------------------------------------------------------------------
+# Node.js & 套件管理 (Node & Package Managers)
+# node_modules, npm/yarn/pnpm 快取與偵錯日誌
+# ------------------------------------------------------------------------------
+node_modules/                # npm / yarn / pnpm 依賴套件庫
+*.log                        # 所有標準日誌檔
+npm-debug.log*               # npm 偵錯紀錄
+yarn-debug.log*              # Yarn 偵錯紀錄
+yarn-error.log*              # Yarn 錯誤紀錄
+pnpm-debug.log*              # pnpm 偵錯紀錄
+.pnpm-store/                 # pnpm 本地儲存庫
+.yarn/cache/                 # Yarn 2+ 快取目錄
+
+# ------------------------------------------------------------------------------
+# 前端建置產物 (Build & Output)
+# dist, build, Next.js, Nuxt, TypeScript 快取
+# ------------------------------------------------------------------------------
+dist/                        # Vite / Webpack 打包輸出目錄
+build/                       # React / CRA / 靜態網站產出目錄
+out/                         # 靜態匯出產物目錄
+.next/                       # Next.js 編譯快取與產物
+.nuxt/                       # Nuxt.js 建置目錄
+.svelte-kit/                 # SvelteKit 編譯產物
+.turbo/                      # Turborepo 快取目錄
+*.tsbuildinfo                # TypeScript 增量編譯快取檔
+
+# ------------------------------------------------------------------------------
+# 測試報告與程式碼覆蓋率 (Testing & Coverage)
+# Jest, Vitest, Cypress, Playwright 測試與錄影產物
+# ------------------------------------------------------------------------------
+coverage/                    # 程式碼測試覆蓋率報告
+.nyc_output/                 # NYC 覆蓋率快取
+junit.xml                    # CI JUnit 測試結果
+test-results/                # Playwright 測試與螢幕截圖
+cypress/videos/              # Cypress 測試錄影產物
+cypress/screenshots/         # Cypress 失敗截圖
+
+# ------------------------------------------------------------------------------
+# Python & 虛擬環境 (Python & venv)
+# __pycache__, .venv, .pytest_cache, Jupyter 暫存
+# ------------------------------------------------------------------------------
+__pycache__/                 # Python 位元碼編譯快取目錄
+*.py[cod]                    # .pyc / .pyo 編譯檔案
+.venv/                       # Python 虛擬環境目錄 (.venv)
+env/                         # Python 虛擬環境目錄 (env)
+venv/                        # Python 虛擬環境目錄 (venv)
+.pytest_cache/               # Pytest 測試快取
+.mypy_cache/                 # Mypy 型別檢查快取
+.ipynb_checkpoints           # Jupyter Notebook 檢查點
+*.egg-info/                  # Python 套件發布中介目錄
+
+# ------------------------------------------------------------------------------
+# 資料庫檔案與暫存檔案 (Databases & Temporary)
+# SQLite 本地資料庫、備份檔與臨時快取
+# ------------------------------------------------------------------------------
+*.sqlite                     # SQLite 本地測試資料庫
+*.sqlite3                    # SQLite3 資料庫檔
+*.db                         # 通用本地 DB 檔
+*.tmp                        # 臨時暫存檔案
+*.temp                       # 系統暫存檔案
+*.bak                        # 備份副檔名
+

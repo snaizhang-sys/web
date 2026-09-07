@@ -1,0 +1,120 @@
+# Specify filepatterns you want to assign special attributes.
+# ==============================================================================
+# Git Attributes Configuration File (.gitattributes)
+# 自動處理換行符號 (LF/CRLF)、二進位檔案保護與 Git 過濾器 (Git LFS / Diff)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 基礎全域設定 (Global & Core)
+# 基礎 Git 行結尾自動辨識與規範
+# ------------------------------------------------------------------------------
+*                    text=auto
+
+# ------------------------------------------------------------------------------
+# Linux / Unix 腳本 (強制 LF)
+# 避免在 Windows 編輯後產生 \r 造成 Linux 執行時報錯 command not found
+# ------------------------------------------------------------------------------
+*.sh                 text eol=lf
+*.bash               text eol=lf
+*.zsh                text eol=lf
+*.fish               text eol=lf
+*.command            text eol=lf
+
+# ------------------------------------------------------------------------------
+# Windows 專用腳本 (強制 CRLF)
+# Windows 批次檔與 CMD 命令列要求相容之 CRLF 結尾
+# ------------------------------------------------------------------------------
+*.bat                text eol=crlf
+*.cmd                text eol=crlf
+*.ps1                text eol=crlf
+*.psm1               text eol=crlf
+*.reg                text eol=crlf
+*.sln                text eol=crlf
+
+# ------------------------------------------------------------------------------
+# 前端與 Web 程式碼 (強制 LF)
+# 統一跨平台 JavaScript / TypeScript / 樣式表結尾
+# ------------------------------------------------------------------------------
+*.js                 text eol=lf
+*.jsx                text eol=lf
+*.ts                 text eol=lf
+*.tsx                text eol=lf
+*.mjs                text eol=lf
+*.cjs                text eol=lf
+*.vue                text eol=lf
+*.svelte             text eol=lf
+*.html               text eol=lf
+*.css                text eol=lf
+*.scss               text eol=lf
+*.svg                text eol=lf
+
+# ------------------------------------------------------------------------------
+# 設定檔與資料格式 (強制 LF)
+# JSON, YAML, TOML, Dockerfile, Git 配置
+# ------------------------------------------------------------------------------
+*.json               text eol=lf
+*.json5              text eol=lf
+*.yaml               text eol=lf
+*.yml                text eol=lf
+*.toml               text eol=lf
+*.xml                text eol=lf
+*.env*               text eol=lf
+.gitignore           text eol=lf
+.gitattributes       text eol=lf
+Dockerfile           text eol=lf
+Makefile             text eol=lf
+
+# ------------------------------------------------------------------------------
+# 技術文件與 Markdown (強制 LF)
+# 保持文件排版乾淨，避免跨平台換行衝突
+# ------------------------------------------------------------------------------
+*.md                 text eol=lf
+*.markdown           text eol=lf
+*.txt                text eol=lf
+*.rst                text eol=lf
+
+# ------------------------------------------------------------------------------
+# 後端與系統語言 (強制 LF)
+# Python, Java, Go, Rust, C/C++, C#, PHP
+# ------------------------------------------------------------------------------
+*.py                 text eol=lf
+*.java               text eol=lf
+*.kt                 text eol=lf
+*.go                 text eol=lf
+*.rs                 text eol=lf
+*.c                  text eol=lf
+*.cpp                text eol=lf
+*.cs                 text eol=lf
+*.php                text eol=lf
+*.sql                text eol=lf
+
+# ------------------------------------------------------------------------------
+# 鎖定檔與編譯產物 (Diff 過濾)
+# 避免 PR / Code Review 時巨大 diff 影響閱讀效率
+# ------------------------------------------------------------------------------
+package-lock.json    -diff -crlf
+pnpm-lock.yaml       -diff -crlf
+yarn.lock            -diff -crlf
+*.min.js             -diff -crlf
+*.min.css            -diff -crlf
+
+# ------------------------------------------------------------------------------
+# 二進位檔案 (Binary 標記)
+# 嚴格禁止 Git 嘗試更動位元組或轉換換行符號，防止檔案損毀
+# ------------------------------------------------------------------------------
+*.png                binary
+*.jpg                binary
+*.jpeg               binary
+*.gif                binary
+*.webp               binary
+*.ico                binary
+*.woff2              binary
+*.ttf                binary
+*.pdf                binary
+*.zip                binary
+*.tar.gz             binary
+*.exe                binary
+*.dll                binary
+*.pyc                binary
+
+
